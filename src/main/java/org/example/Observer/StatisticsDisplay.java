@@ -6,6 +6,7 @@ public class StatisticsDisplay implements Observer, DisplayElement{
     private float avg;
     private float max = Float.MIN_VALUE;
     private float min = Float.MAX_VALUE;
+    private float temp;
     private Subject weatherData;
 
     public StatisticsDisplay(Subject weatherData) {
@@ -13,7 +14,8 @@ public class StatisticsDisplay implements Observer, DisplayElement{
         weatherData.registerObserver(this);
     }
     @Override
-    public void update(float temp, float humidity, float pressure) {
+    public void update() {
+        this.temp = weatherData.getTemperature();
         sum += temp;
         count++;
 
