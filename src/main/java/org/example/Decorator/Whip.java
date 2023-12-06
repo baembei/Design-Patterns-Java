@@ -1,14 +1,19 @@
 package org.example.Decorator;
 
+import java.beans.beancontext.BeanContext;
+
 public class Whip extends CondimentDecorator{
+    public Whip(Beverage beverage){
+        this.beverage = beverage;
+    }
 
     @Override
     public double cost() {
-        return 0;
+        return beverage.cost() + 0.10;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return beverage.getDesription() + ", Whip";
     }
 }

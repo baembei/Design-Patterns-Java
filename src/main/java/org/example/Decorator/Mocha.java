@@ -1,14 +1,17 @@
 package org.example.Decorator;
 
 public class Mocha extends CondimentDecorator {
+    public Mocha(Beverage beverage){
+        this.beverage = beverage;
+    }
 
     @Override
     public double cost() {
-        return 0;
+        return beverage.cost() + 0.20;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return beverage.getDesription() + ", Mocha";
     }
 }
