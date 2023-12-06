@@ -15,23 +15,7 @@ public abstract class Beverage {
         this.description = description;
     }
 
-    public double cost(){
-        double condimentCost = 0.0;
-
-        if(hasMilk()){
-            condimentCost += milkCost;
-        }
-        if (hasSoy()){
-            condimentCost += soyCost;
-        }
-        if (hasMocha()){
-            condimentCost += mochaCost;
-        }
-        if (hasWhip()){
-            condimentCost += whipCost;
-        }
-        return condimentCost;
-    }
+    public abstract double cost();
 
     public boolean hasMilk(){
         return true;
