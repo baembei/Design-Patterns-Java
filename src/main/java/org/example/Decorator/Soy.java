@@ -13,6 +13,6 @@ public class Soy extends CondimentDecorator{
 
     @Override
     public String getDescription() {
-        return beverage.getDesription() + ", Soy";
+        return beverage.getDescription() + ", Soy";
     }
 }
